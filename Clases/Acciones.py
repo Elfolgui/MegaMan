@@ -24,6 +24,12 @@ def Acciones(reloj, MegaMan, FPS, frames_totales, Enemigo):
     if Enemigo.rect.x < 0:
         Controlador.Eliminar_Enemigo(Enemigo)
 
+    print(MegaMan.Vida)
+
+    if MegaMan.Vida == 0:
+        pygame.quit()
+        quit()
+
     Controlador.Mover_Enemigo(Base.Enemigos)
     Controlador.salto_MegaMan(MegaMan)
     Controlador.colisiones(MegaMan)

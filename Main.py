@@ -2,7 +2,7 @@ import sys
 from Clases import *
 
 Principal = Mega_Man(20, 370, 90,90,"Imagenes/Inclinado.png")
-Enemigo = Enemigo(800, 350, 110, 110, "Imagenes/Enemigos/Enemigo.png")
+Enemigo = Enemigo(1200, 350, 110, 110, "Imagenes/Enemigos/Enemigo.png")
 Fondo = Fondo()
 ancho = 1280
 alto = 720

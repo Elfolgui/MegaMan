@@ -15,6 +15,7 @@ class Mega_Man(Base):
         self.Direccion = True
         self.Bajando = False
         self.salto = False
+        self.Vida = 3
         Base.sprites.add(self)
 
     def Mov_Derecha(self, velocidad, frames_Totales):
@@ -141,11 +142,17 @@ class Mega_Man(Base):
             return False
         return True
 
+    def colision_Bala(self):
+        Bala = self.colision(Base.Balas)
+        if Bala is not False:
+            Base.sprites.remove(Bala)
+            return "Me Pegaron"
+        return True
+
     def colision_bloques_caida(self, bloque):
         if self.rect.x < bloque.rect.x + 60 and self.rect.x > bloque.rect.x - 90:
             # Chocó estando sobre el bloque?
             if bloque.rect.y >= self.rect.y + 90:
-
                 self.terminar_salto()
 
             # Chocó estando fuera de la hitbox?
