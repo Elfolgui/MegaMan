@@ -1,9 +1,8 @@
 from .Controlador import *
 from .Base import Base
-from .Enemigos import Enemigo
 import pygame
 
-def Acciones(reloj, MegaMan, FPS, frames_totales, segundos, Enemigo):
+def Acciones(reloj, MegaMan, FPS, frames_totales, Enemigo):
 
     Controlador.set_fps(reloj, FPS)
     Controlador.buscar_eventos(MegaMan)
@@ -19,13 +18,13 @@ def Acciones(reloj, MegaMan, FPS, frames_totales, segundos, Enemigo):
     if teclas[pygame.K_w] or teclas[pygame.K_UP] and MegaMan.salto is False:
         MegaMan.activar_salto()
 
-    if segundos == 0.5:
+    if frames_totales % 70 == 0:
         Enemigo.Disparar()
 
-    if segundos > 0.5:
-        Enemigo.Movimiento_Balas()
+    if Enemigo.rect.x < 0:
+        Controlador.Eliminar_Enemigo(Enemigo)
 
     Controlador.Mover_Enemigo(Base.Enemigos)
     Controlador.salto_MegaMan(MegaMan)
     Controlador.colisiones(MegaMan)
-    Controlador.Mover_Bala(Base.Balas)
+    Controlador.Mover_Balas(Base.Balas)

@@ -1,8 +1,6 @@
 import pygame.locals
 from .Base import *
 from .Bala import Bala
-from .Enemigos import Enemigo
-from .Bala_Mala import Bala_Mala
 
 
 class Controlador(object):
@@ -54,10 +52,26 @@ class Controlador(object):
             if evento.type == pygame.KEYDOWN and evento.key == pygame.K_SPACE and not MegaMan.salto:
                 MegaMan.Disparar()
             if evento.type == pygame.KEYDOWN and evento.key == pygame.K_SPACE and MegaMan.salto:
-                print("Dispare!")
                 MegaMan.Disparar_Saltando()
             if evento.type == pygame.KEYDOWN and evento.key == pygame.K_DOWN:
                 MegaMan.Agacharse()
+
+    @classmethod
+    def Mover_Balas(cls, Grupo):
+        for Bala in Grupo:
+            if Bala.Tipo == "Bala_Buena":
+                if Bala.Direccion:
+                    Bala.rect.x += 20
+                if not Bala.Direccion:
+                    Bala.rect.x -= 20
+            if Bala.Tipo == "Bala_Mala":
+                if Bala.Estilo == "Recta":
+                    Bala.rect.x -= 15
+                if Bala.Estilo == "Diagonal":
+                    Bala.rect.x -= 15
+                    Bala.rect.y -= 12
+
+
 
     @classmethod
     def Mover_Enemigo(cls, Grupo):
@@ -73,18 +87,15 @@ class Controlador(object):
         if MegaMan.Direccion:
             b1 = Bala(MegaMan.rect.x + 55, MegaMan.rect.y + 25, 30, 30, "Balas/Bala.png")
             b1.Direccion = MegaMan.Direccion
+            b1.Tipo = "Bala_Buena"
         if not MegaMan.Direccion:
             b1 = Bala(MegaMan.rect.x, MegaMan.rect.y + 30, 30, 30, "Balas/Bala.png")
             b1.Direccion = MegaMan.Direccion
-
+            b1.Tipo = "Bala_Buena"
 
     @classmethod
-    def Mover_Bala(cls, Grupo):
-        for Bala in Grupo:
-            if Bala.Direccion:
-                Bala.rect.x += 20
-            if not Bala.Direccion:
-                Bala.rect.x -= 20
+    def Eliminar_Enemigo(cls, Enemigo):
+        Base.sprites.remove(Enemigo)
 
     @classmethod
     def salto_MegaMan(cls, MegaMan):

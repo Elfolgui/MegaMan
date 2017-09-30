@@ -1,6 +1,5 @@
 from .Base import Base
-from .Bala_Mala import Bala_Mala
-
+from .Bala import Bala
 
 class Enemigo(Base):
 
@@ -11,10 +10,9 @@ class Enemigo(Base):
         Base.Enemigos.add(self)
 
     def Disparar(self):
-        b1 = Bala_Mala(self.rect.x, self.rect.y + 30, 30, 30, "Balas/Bala.png")
-        b2 = Bala_Mala(self.rect.x, self.rect.y + 30, 30, 30, "Balas/Bala.png")
-        self.Lista_Balas.append(b1)
-        self.Lista_Balas.append(b2)
-
-    def Movimiento_Balas(self):
-        #Esto tiene que recorrer la lista de balas y llamar a sus métodos de movimientos
+        b1 = Bala(self.rect.x, self.rect.y + 30, 30, 30, "Balas/Bala.png")
+        b2 = Bala(self.rect.x, self.rect.y + 30, 30, 30, "Balas/Bala.png")
+        b1.Tipo = "Bala_Mala"
+        b2.Tipo = "Bala_Mala"
+        b1.Estilo = "Diagonal"
+        b2.Estilo = "Recta"
