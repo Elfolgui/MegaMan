@@ -1,5 +1,6 @@
 from .Base import Base
 from .Bala import Bala
+import pygame
 
 class Enemigo(Base):
 
@@ -16,3 +17,16 @@ class Enemigo(Base):
         b2.Tipo = "Bala_Mala"
         b1.Estilo = "Diagonal"
         b2.Estilo = "Recta"
+
+    def colision(self, grupo):
+        elemento = pygame.sprite.spritecollideany(self, grupo, collided=None)
+        if elemento is not None:
+            return elemento
+        else:
+            return False
+
+    def Colision_Bala(self):
+        Bala = self.colision(Base.Balas)
+        if Bala is not False and Bala.Tipo == "Bala_Buena":
+            Base.sprites.remove(Bala)
+            Base.sprites.remove(self)

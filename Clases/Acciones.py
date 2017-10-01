@@ -32,5 +32,6 @@ def Acciones(reloj, MegaMan, FPS, frames_totales, Enemigo):
 
     Controlador.Mover_Enemigo(Base.Enemigos)
     Controlador.salto_MegaMan(MegaMan)
-    Controlador.colisiones(MegaMan)
+    MegaMan.colision_Bala()
+    Enemigo.Colision_Bala()
     Controlador.Mover_Balas(Base.Balas)

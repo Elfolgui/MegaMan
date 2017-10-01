@@ -144,10 +144,10 @@ class Mega_Man(Base):
 
     def colision_Bala(self):
         Bala = self.colision(Base.Balas)
-        if Bala is not False:
+        if Bala is not False and Bala.Tipo == "Bala_Mala":
             Base.sprites.remove(Bala)
-            return "Me Pegaron"
-        return True
+            self.Vida -= 1
+            print("Saque el sprite")
 
     def colision_bloques_caida(self, bloque):
         if self.rect.x < bloque.rect.x + 60 and self.rect.x > bloque.rect.x - 90:

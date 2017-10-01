@@ -123,9 +123,10 @@ class Controlador(object):
                     MegaMan.detenerse()
                     MegaMan.Bajando = False
 
-            if MegaMan.colision_Bala() == "Me Pegaron":
-                print("Perdi Vida")
-                MegaMan.Vida -= 0.5
+            # if MegaMan.colision_Bala() == "Me Pegaron" and Base.sprites.has(Bala):
+            #     print("Perdi Vida")
+            #     MegaMan.Vida -= 0.5
+
     #@classmethod
     # def buscar_objetos(cls, mario):
     #     bloque = mario.colision(Base.bloques)
