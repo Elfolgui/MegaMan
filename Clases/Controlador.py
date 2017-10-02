@@ -35,9 +35,10 @@ class Controlador(object):
 
     @classmethod
     def mover_pantalla(cls, fondo):
-        fondo.rect.x -= 30
-        for item in Base.sprites:
-            item.rect.x -= 30
+        if fondo.rect.x <= 0 and fondo.rect.x > -1200:
+            fondo.rect.x -= 15
+        # for item in Base.sprites:
+        #     item.rect.x -= 30
 
 
     @classmethod

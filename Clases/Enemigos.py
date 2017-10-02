@@ -7,6 +7,7 @@ class Enemigo(Base):
     def __init__(self, x, y, ancho, alto, ruta):
         Base.__init__(self, x, y, ancho, alto, ruta)
         self.Lista_Balas = []
+        self.Activo = True
         Base.sprites.add(self)
         Base.Enemigos.add(self)
 
@@ -28,7 +29,8 @@ class Enemigo(Base):
     def Colision_Bala(self):
         Bala = self.colision(Base.Balas)
         if Bala is not False and Bala.Tipo == "Bala_Buena":
+            self.Activo = False
             Base.sprites.remove(Bala)
             Base.sprites.remove(self)
             Base.Balas.remove(Bala)
-            Base.Enmigos.remove(self)
+            Base.Enemigos.remove(self)

@@ -148,7 +148,6 @@ class Mega_Man(Base):
             Base.sprites.remove(Bala)
             Base.Balas.remove(Bala)
             self.Vida -= 1
-            print("Saque el sprite")
 
     def colision_bloques_caida(self, bloque):
         if self.rect.x < bloque.rect.x + 60 and self.rect.x > bloque.rect.x - 90:

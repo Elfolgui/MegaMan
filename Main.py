@@ -17,7 +17,7 @@ Colocacion()
 
 while True:
 
-    Acciones(reloj, Principal, FPS, frames_totales, Enemigo)
+    Acciones(reloj, Principal, FPS, frames_totales, Enemigo, Fondo)
 
     if frames_totales % (FPS / 4) == 0:
         segundos += 0.25
