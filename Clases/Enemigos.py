@@ -30,3 +30,5 @@ class Enemigo(Base):
         if Bala is not False and Bala.Tipo == "Bala_Buena":
             Base.sprites.remove(Bala)
             Base.sprites.remove(self)
+            Base.Balas.remove(Bala)
+            Base.Enmigos.remove(self)
