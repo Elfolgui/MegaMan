@@ -9,3 +9,4 @@ from .Acciones import *
 from .dibujo import *
 from .Colocacion import *
 from .Enemigos import *
+from .Escaleras import *

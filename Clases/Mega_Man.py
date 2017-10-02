@@ -137,6 +137,10 @@ class Mega_Man(Base):
         else:
             return False
 
+    def Colision_Escalera(self, Grupo):
+        if self.colision(Grupo) is not False:
+            return True
+
     def colision_piso(self):
         if self.colision(Base.piso) is False:
             return False

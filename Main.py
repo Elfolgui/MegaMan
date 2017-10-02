@@ -4,6 +4,7 @@ from Clases import *
 Principal = Mega_Man(20, 370, 90,90,"Imagenes/Inclinado.png")
 Enemigo = Enemigo(1500, 350, 110, 110, "Imagenes/Enemigos/Enemigo.png")
 Fondo = Fondo()
+Escalera = Escalera(2388,0,40, 499, "Fondo/Escaleras.png")
 ancho = 1280
 alto = 720
 ventana = Controlador.configurar_pantalla(ancho, alto)
@@ -17,7 +18,7 @@ Colocacion()
 
 while True:
 
-    Acciones(reloj, Principal, FPS, frames_totales, Enemigo, Fondo)
+    Acciones(reloj, Principal, FPS, frames_totales, Enemigo, Fondo, Escalera)
 
     if frames_totales % (FPS / 4) == 0:
         segundos += 0.25
