@@ -146,6 +146,7 @@ class Mega_Man(Base):
         Bala = self.colision(Base.Balas)
         if Bala is not False and Bala.Tipo == "Bala_Mala":
             Base.sprites.remove(Bala)
+            Base.Balas.remove(Bala)
             self.Vida -= 1
             print("Saque el sprite")
 
