@@ -34,10 +34,11 @@ class Controlador(object):
         ventana.blit(fondo.image, fondo.rect)
 
     @classmethod
-    def mover_pantalla(cls, fondo, Escalera):
+    def mover_pantalla(cls, fondo, Escalera, Enemigo):
         if fondo.rect.x <= 0 and fondo.rect.x > -1200:
             Escalera.rect.x -= 15
             fondo.rect.x -= 15
+            Enemigo.rect.x -= 15
         # for item in Base.sprites:
         #     item.rect.x -= 30
 

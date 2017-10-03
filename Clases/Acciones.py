@@ -24,7 +24,7 @@ def Acciones(reloj, MegaMan, FPS, frames_totales, Enemigo, fondo, Escalera):
     if MegaMan.rect.x > 375 and (teclas[pygame.K_d] or teclas[pygame.K_RIGHT]):
         if fondo.rect.x != -1200:
             MegaMan.rect.x = 375
-            Controlador.mover_pantalla(fondo, Escalera)
+            Controlador.mover_pantalla(fondo, Escalera, Enemigo)
 
     if Enemigo.rect.x < 0:
         Controlador.Eliminar_Enemigo(Enemigo)
@@ -35,7 +35,6 @@ def Acciones(reloj, MegaMan, FPS, frames_totales, Enemigo, fondo, Escalera):
 
     if MegaMan.Colision_Escalera(Base.Escalera) and (teclas[pygame.K_w] or teclas[pygame.K_UP]):
         MegaMan.rect.y -= 15
-
 
     Controlador.Mover_Enemigo(Base.Enemigos)
     Controlador.salto_MegaMan(MegaMan)
