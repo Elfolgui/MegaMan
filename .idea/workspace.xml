@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9071f792-587b-4270-b576-c3c39553070e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Fondo/Escaleras.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Clases/Acciones.py" afterPath="$PROJECT_DIR$/Clases/Acciones.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Clases/Controlador.py" afterPath="$PROJECT_DIR$/Clases/Controlador.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Clases/Escaleras.py" afterPath="$PROJECT_DIR$/Clases/Escaleras.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Clases/dibujo.py" afterPath="$PROJECT_DIR$/Clases/dibujo.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,11 +40,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Controlador.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Escaleras.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Clases/Escaleras.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="30" lean-forward="false" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Controlador.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Clases/Controlador.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="37" column="54" lean-forward="true" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="54" />
+            <state relative-caret-position="306">
+              <caret line="33" column="45" lean-forward="true" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -88,8 +97,8 @@
       <file leaf-file-name="dibujo.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Clases/dibujo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="58" lean-forward="true" selection-start-line="4" selection-start-column="58" selection-end-line="4" selection-end-column="58" />
+            <state relative-caret-position="102">
+              <caret line="6" column="30" lean-forward="true" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -126,15 +135,15 @@
         <option value="$PROJECT_DIR$/Clases/Bala.py" />
         <option value="$PROJECT_DIR$/Clases/Fondo.py" />
         <option value="$PROJECT_DIR$/Clases/Enemigos.py" />
-        <option value="$PROJECT_DIR$/Clases/dibujo.py" />
         <option value="$PROJECT_DIR$/Clases/Colocacion.py" />
         <option value="$PROJECT_DIR$/Clases/__init__.py" />
         <option value="$PROJECT_DIR$/Clases/Base.py" />
-        <option value="$PROJECT_DIR$/Clases/Escaleras.py" />
         <option value="$PROJECT_DIR$/Clases/Mega_Man.py" />
         <option value="$PROJECT_DIR$/Main.py" />
         <option value="$PROJECT_DIR$/Clases/Acciones.py" />
         <option value="$PROJECT_DIR$/Clases/Controlador.py" />
+        <option value="$PROJECT_DIR$/Clases/dibujo.py" />
+        <option value="$PROJECT_DIR$/Clases/Escaleras.py" />
       </list>
     </option>
   </component>
@@ -352,7 +361,14 @@
       <option name="project" value="LOCAL" />
       <updated>1506986030057</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Agregue las escaleras">
+      <created>1506994446041</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1506994446041</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -386,7 +402,8 @@
     <MESSAGE value="Empezando con colisiones de balas." />
     <MESSAGE value="Movimiento del Fondo hecho. Falta: Colision con escalera, colision con enemigo (cuerpo), agregar mas enemigros, y hasta hacer mas grande el mapa" />
     <MESSAGE value="Colision con escalera, funciona. Arreglar transiciones de sprites (fondo y enemigos). Ajustar colisiones" />
-    <option name="LAST_COMMIT_MESSAGE" value="Colision con escalera, funciona. Arreglar transiciones de sprites (fondo y enemigos). Ajustar colisiones" />
+    <MESSAGE value="Agregue las escaleras" />
+    <option name="LAST_COMMIT_MESSAGE" value="Agregue las escaleras" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -606,16 +623,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Clases/Enemigos.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="37" lean-forward="true" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Clases/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -630,14 +637,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Clases/dibujo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="58" lean-forward="true" selection-start-line="4" selection-start-column="58" selection-end-line="4" selection-end-column="58" />
           <folding />
         </state>
       </provider>
@@ -658,10 +657,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Clases/Escaleras.py">
+    <entry file="file://$PROJECT_DIR$/Clases/Mega_Man.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="30" lean-forward="false" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+        <state relative-caret-position="323">
+          <caret line="141" column="19" lean-forward="false" selection-start-line="141" selection-start-column="19" selection-end-line="141" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -676,6 +675,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Clases/dibujo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="30" lean-forward="true" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Clases/Enemigos.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="37" lean-forward="true" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Clases/Colocacion.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -684,11 +701,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Clases/Mega_Man.py">
+    <entry file="file://$PROJECT_DIR$/Clases/Controlador.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="141" column="19" lean-forward="false" selection-start-line="141" selection-start-column="19" selection-end-line="141" selection-end-column="19" />
-          <folding />
+        <state relative-caret-position="306">
+          <caret line="33" column="45" lean-forward="true" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -702,13 +721,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Clases/Controlador.py">
+    <entry file="file://$PROJECT_DIR$/Clases/Escaleras.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="37" column="54" lean-forward="true" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="119">
+          <caret line="7" column="30" lean-forward="false" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
