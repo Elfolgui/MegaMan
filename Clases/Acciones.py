@@ -22,9 +22,9 @@ def Acciones(reloj, MegaMan, FPS, frames_totales, Enemigo, fondo, Escalera):
         Enemigo.Disparar()
 
     if MegaMan.rect.x > 375 and (teclas[pygame.K_d] or teclas[pygame.K_RIGHT]):
-        if fondo.rect.x != -1200:
+        if fondo.rect.x > -1700:
             MegaMan.rect.x = 375
-            Controlador.mover_pantalla(fondo, Escalera, Enemigo)
+            Controlador.mover_pantalla(fondo, Escalera, Enemigo, Base.Balas)
 
     if Enemigo.rect.x < 0:
         Controlador.Eliminar_Enemigo(Enemigo)

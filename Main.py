@@ -1,10 +1,10 @@
 import sys
 from Clases import *
 
-Principal = Mega_Man(20, 370, 90,90,"Imagenes/Inclinado.png")
-Enemigo = Enemigo(1500, 350, 110, 110, "Imagenes/Enemigos/Enemigo.png")
+Principal = Mega_Man(20, 535, 110, 110,"Imagenes/Inclinado.png")
+Enemigo = Enemigo(1500, 535, 130, 130, "Imagenes/Enemigos/Enemigo.png")
+Escalera = Escalera(2868,0,40, 650, "Fondo/Escaleras.png")
 Fondo = Fondo()
-Escalera = Escalera(2388,0,40, 499, "Fondo/Escaleras.png")
 ancho = 1280
 alto = 720
 ventana = Controlador.configurar_pantalla(ancho, alto)
@@ -14,7 +14,7 @@ FPS = 20
 frames_totales = 0
 segundos = 0
 
-Colocacion()
+Fondos = Colocacion()
 
 while True:
 

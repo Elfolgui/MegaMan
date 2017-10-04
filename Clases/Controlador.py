@@ -34,8 +34,10 @@ class Controlador(object):
         ventana.blit(fondo.image, fondo.rect)
 
     @classmethod
-    def mover_pantalla(cls, fondo, Escalera, Enemigo):
-        if fondo.rect.x <= 0 and fondo.rect.x > -1200:
+    def mover_pantalla(cls, fondo, Escalera, Enemigo, Grupo):
+        if fondo.rect.x <= 0 and fondo.rect.x > -1700:
+            for Bala in Grupo:
+                Bala.rect.x -= 15
             Escalera.rect.x -= 15
             fondo.rect.x -= 15
             Enemigo.rect.x -= 15
@@ -122,6 +124,7 @@ class Controlador(object):
                 #     MegaMan.caerse()
 
             else:
+                MegaMan.rect.y += 10
                 if MegaMan.Bajando:
                     MegaMan.detenerse()
                     MegaMan.Bajando = False
