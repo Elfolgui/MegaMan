@@ -1,4 +1,5 @@
 from .Controlador import *
+from .Controlador_Personajes import *
 from .Base import Base
 import pygame
 
@@ -36,8 +37,7 @@ def Acciones(reloj, MegaMan, FPS, frames_totales, Enemigo, fondo, Escalera):
     if MegaMan.Colision_Escalera(Base.Escalera) and (teclas[pygame.K_w] or teclas[pygame.K_UP]):
         MegaMan.rect.y -= 15
 
-    Controlador.Mover_Enemigo(Base.Enemigos)
-    Controlador.salto_MegaMan(MegaMan)
-    MegaMan.colision_Bala()
-    Enemigo.Colision_Bala()
+    Controlador_Personajes.Mover_Enemigo()
+    Controlador_Personajes.salto_MegaMan(MegaMan)
+    Controlador_Personajes.Colisiones()
     Controlador.Mover_Balas(Base.Balas)

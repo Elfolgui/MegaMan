@@ -9,6 +9,7 @@ class Mega_Man(Base):
         self.Movimientos = ("Imagenes/Inclinado.png", "Imagenes/Proximo-Paso.png", "Imagenes/Pierna-Derecha.png",
                             "Imagenes/Proximo-Paso.png", "Imagenes/Pierna-Izquierda.png", "Imagenes/Salto.png",
                             "Imagenes/Disparo.png", "Imagenes/Disparo_Aire.png", "Imagenes/Agachado.png")
+        self.Tipo = "Principal"
         self.frame = 0
         self.Estado = 0
         self.maximo = 0
@@ -17,6 +18,7 @@ class Mega_Man(Base):
         self.salto = False
         self.Vida = 3
         Base.sprites.add(self)
+        Base.Principales.add(self)
 
     def Mov_Derecha(self, velocidad, frames_Totales):
         if not self.Direccion:
@@ -95,7 +97,9 @@ class Mega_Man(Base):
         if self.Bajando is True:
             self.rect.y += 20
 
-        self.colisiones_con_salto()
+        if self.colision_piso():
+            print(self.rect.y)
+            self.terminar_salto()
 
     def Disparar(self):
         if self.Direccion:
@@ -118,11 +122,11 @@ class Mega_Man(Base):
 
     def cambiar_sprite(self, movimiento):
         self.image = pygame.image.load(movimiento)
-        self.image = pygame.transform.scale(self.image, (90, 90))
+        self.image = pygame.transform.scale(self.image, (self.ancho, self.alto))
 
     def invertir(self):
         self.image = pygame.transform.flip(self.image, True, False)
-        self.image = pygame.transform.scale(self.image, (90, 90))
+        self.image = pygame.transform.scale(self.image, (self.ancho, self.alto))
 
     def detenerse(self):
         if self.salto is False:
@@ -133,6 +137,7 @@ class Mega_Man(Base):
     def colision(self, grupo):
         elemento = pygame.sprite.spritecollideany(self, grupo, collided=None)
         if elemento is not None:
+            print("Colisione")
             return elemento
         else:
             return False
@@ -153,19 +158,27 @@ class Mega_Man(Base):
             Base.Balas.remove(Bala)
             self.Vida -= 1
 
-    def colision_bloques_caida(self, bloque):
-        if self.rect.x < bloque.rect.x + 60 and self.rect.x > bloque.rect.x - 90:
-            # Chocó estando sobre el bloque?
-            if bloque.rect.y >= self.rect.y + 90:
-                self.terminar_salto()
+    def Colision_Enemigo(self):
+        Enemigo = self.colision(Base.Enemigos)
+        if Enemigo is not False:
+            self.Vida -= 1
+
+
+
+
+    # def colision_bloques_caida(self, bloque):
+    #     if self.rect.x < bloque.rect.x + 60 and self.rect.x > bloque.rect.x - 90:
+    #         # Chocó estando sobre el bloque?
+    #         if bloque.rect.y == self.rect.y + 100:
+    #             self.terminar_salto()
 
             # Chocó estando fuera de la hitbox?
             # Chocó en la derecha?
-            elif self.rect.x > bloque.rect.x:
-                self.rect.x = bloque.rect.x + 70
-            # Chocó en la izquierda?
-            elif self.rect.x < bloque.rect.x:
-                self.rect.x = bloque.rect.x - 95
+            # elif self.rect.x > bloque.rect.x:
+            #     self.rect.x = bloque.rect.x + 70
+            # # Chocó en la izquierda?
+            # elif self.rect.x < bloque.rect.x:
+            #     self.rect.x = bloque.rect.x - 95
 
     def terminar_salto(self):
         if self.Bajando:
@@ -173,10 +186,12 @@ class Mega_Man(Base):
             self.salto = False
             self.detenerse()
 
-    def colisiones_con_salto(self):
-
-        if self.colision(Base.piso) is not False:
-            self.terminar_salto()
+    # def colisiones_con_salto(self):
+    #
+    #     if self.colision(Base.piso) is not False:
+    #         print("Toque Bloque")
+    #         print(self.rect.y)
+    #         self.terminar_salto()
             # Colisiona con dos objetos?
         # bloque, bloque2 = Controlador.buscar_objetos(self)
         #

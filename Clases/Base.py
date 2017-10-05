@@ -11,6 +11,7 @@ class Base(pygame.sprite.Sprite):
     bloques = Sprites()
     Escalera = Sprites()
     Fondo = Sprites()
+    Principales = Sprites()
 
     def __init__(self, x, y, ancho, alto, ruta):
 

@@ -9,7 +9,7 @@ def Colocacion():
     x = 0
 
     for i in range(21):
-        piso = Piso(x,630)
+        piso = Piso(x,678)
         x += 119
 
     # """x = 4320

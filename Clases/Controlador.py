@@ -76,13 +76,6 @@ class Controlador(object):
                     Bala.rect.x -= 15
                     Bala.rect.y -= 12
 
-
-
-    @classmethod
-    def Mover_Enemigo(cls, Grupo):
-        for E in Grupo:
-            E.rect.x -= 6
-
     @classmethod
     def buscar_teclas(cls):
         return pygame.key.get_pressed()
@@ -101,11 +94,6 @@ class Controlador(object):
     @classmethod
     def Eliminar_Enemigo(cls, Enemigo):
         Base.sprites.remove(Enemigo)
-
-    @classmethod
-    def salto_MegaMan(cls, MegaMan):
-        if MegaMan.salto:
-            MegaMan.saltar()
 
     @classmethod
     def colisiones(cls, MegaMan):

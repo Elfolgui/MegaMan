@@ -8,12 +8,13 @@ class Enemigo(Base):
         Base.__init__(self, x, y, ancho, alto, ruta)
         self.Lista_Balas = []
         self.Activo = True
+        self.Tipo = "Enemigo"
         Base.sprites.add(self)
         Base.Enemigos.add(self)
 
     def Disparar(self):
-        b1 = Bala(self.rect.x, self.rect.y + 30, 30, 30, "Balas/Bala.png")
-        b2 = Bala(self.rect.x, self.rect.y + 30, 30, 30, "Balas/Bala.png")
+        b1 = Bala(self.rect.x, self.rect.y + 50, 30, 30, "Balas/Bala.png")
+        b2 = Bala(self.rect.x, self.rect.y + 50, 30, 30, "Balas/Bala.png")
         b1.Tipo = "Bala_Mala"
         b2.Tipo = "Bala_Mala"
         b1.Estilo = "Diagonal"
@@ -27,10 +28,14 @@ class Enemigo(Base):
             return False
 
     def Colision_Bala(self):
-        Bala = self.colision(Base.Balas)
-        if Bala is not False and Bala.Tipo == "Bala_Buena":
+        Disparo = self.colision(Base.Balas)
+        if Disparo is not False and Disparo.Tipo == "Bala_Buena":
+            print(Disparo)
+            print("Choque")
+            print(Base.sprites.sprites())
             self.Activo = False
-            Base.sprites.remove(Bala)
+            Base.sprites.remove(Disparo)
             Base.sprites.remove(self)
-            Base.Balas.remove(Bala)
+            Base.Balas.remove(Disparo)
             Base.Enemigos.remove(self)
+            print(Base.sprites.sprites())
