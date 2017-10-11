@@ -6,19 +6,33 @@ class Mega_Man(Base):
 
     def __init__(self, x, y, ancho, alto, ruta):
         Base.__init__(self, x, y, ancho, alto, ruta)
-        self.Movimientos = ("Imagenes/Inclinado.png", "Imagenes/Proximo-Paso.png", "Imagenes/Pierna-Derecha.png",
-                            "Imagenes/Proximo-Paso.png", "Imagenes/Pierna-Izquierda.png", "Imagenes/Salto.png",
-                            "Imagenes/Disparo.png", "Imagenes/Disparo_Aire.png", "Imagenes/Agachado.png")
+        self.Movimientos = ("Movimientos/Entrando_1.png", "Movimientos/Entrando_2.png", "Movimientos/Entrando_3.png",
+                            "Movimientos/Parado.png", "Movimientos/Ojos_Cerrados.png","Movimientos/Inclinado.png",
+                            "Movimientos/P_Paso.png", "Movimientos/P_Derecho.png", "Movimientos/P_Paso.png",
+                            "Movimientos/P_Izquierdo.png","Movimientos/Salto.png",
+                            "Movimientos/Disparando.png","Movimientos/Disparo_Aire.png")
         self.Tipo = "Principal"
         self.frame = 0
-        self.Estado = 0
+        self.Estado = 5
         self.maximo = 0
+        self.Entrada = True
         self.Direccion = True
         self.Bajando = False
         self.salto = False
         self.Vida = 3
         Base.sprites.add(self)
         Base.Principales.add(self)
+
+    def Primera_Animacion(self):
+        if self.Entrada:
+            if self.rect.x < 585:
+                while self.Estado < 3:
+                    print(self.Estado)
+                    self.cambiar_sprite(self.Movimientos[self.Estado])
+                    self.rect.x += 25
+                    self.Estado += 1
+            if self.rect.x == 585:
+                self.Entrada = False
 
     def Mov_Derecha(self, velocidad, frames_Totales):
         if not self.Direccion:
@@ -30,13 +44,13 @@ class Mega_Man(Base):
         if not self.salto:
             if (frames_Totales - self.frame) > 2:
 
-                if self.Estado == 0 or self.Estado == 1 or self.Estado == 2 or self.Estado == 3:
+                if self.Estado == 5 or self.Estado == 6 or self.Estado == 7 or self.Estado == 8:
                     self.Estado += 1
                     self.frame = frames_Totales
                     self.cambiar_sprite(self.Movimientos[self.Estado])
 
-                elif self.Estado == 4:
-                    self.Estado = 1
+                elif self.Estado == 9:
+                    self.Estado = 6
                     self.frame = frames_Totales
                     self.cambiar_sprite(self.Movimientos[self.Estado])
 
@@ -53,13 +67,13 @@ class Mega_Man(Base):
         if self.salto is False:
             if (frames_Totales - self.frame > 2):
 
-                if self.Estado == 0 or self.Estado == 1 or self.Estado == 2 or self.Estado == 3:
+                if self.Estado == 5 or self.Estado == 6 or self.Estado == 7 or self.Estado == 8:
                     self.Estado += 1
                     self.frame = frames_Totales
                     self.cambiar_sprite(self.Movimientos[self.Estado])
                     self.invertir()
 
-                elif self.Estado == 4:
+                elif self.Estado == 9:
                     self.Estado = 1
                     self.frame = frames_Totales
                     self.cambiar_sprite(self.Movimientos[self.Estado])
@@ -78,7 +92,7 @@ class Mega_Man(Base):
         self.original = self.rect.y
         self.maximo = self.rect.y - 150
         self.salto = True
-        self.cambiar_sprite(self.Movimientos[5])
+        self.cambiar_sprite(self.Movimientos[10])
         if self.Direccion is False:
             self.invertir()
 
@@ -103,19 +117,19 @@ class Mega_Man(Base):
 
     def Disparar(self):
         if self.Direccion:
-            self.cambiar_sprite(self.Movimientos[6])
+            self.cambiar_sprite(self.Movimientos[11])
             Controlador.Crear_Bala(self)
         else:
-            self.cambiar_sprite(self.Movimientos[6])
+            self.cambiar_sprite(self.Movimientos[11])
             self.invertir()
             Controlador.Crear_Bala(self)
 
     def Disparar_Saltando(self):
         if self.Direccion:
-            self.cambiar_sprite(self.Movimientos[7])
+            self.cambiar_sprite(self.Movimientos[12])
             Controlador.Crear_Bala(self)
         else:
-            self.cambiar_sprite(self.Movimientos[7])
+            self.cambiar_sprite(self.Movimientos[12])
             self.invertir()
             Controlador.Crear_Bala(self)
 
@@ -137,7 +151,6 @@ class Mega_Man(Base):
     def colision(self, grupo):
         elemento = pygame.sprite.spritecollideany(self, grupo, collided=None)
         if elemento is not None:
-            print("Colisione")
             return elemento
         else:
             return False

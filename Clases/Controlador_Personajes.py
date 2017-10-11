@@ -13,6 +13,14 @@ class Controlador_Personajes(object):
             P.colision_Bala()
 
     @classmethod
+    def MegaMan_Entrada(cls, MegaMan):
+        for Num in range(3):
+            MegaMan.cambiar_Sprite(MegaMan.Estado[Num])
+
+
+
+
+    @classmethod
     def salto_MegaMan(cls, MegaMan):
         if MegaMan.salto:
             MegaMan.saltar()

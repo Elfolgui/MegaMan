@@ -1,7 +1,7 @@
 import sys
 from Clases import *
 
-Principal = Mega_Man(20, 585, 110, 110,"Imagenes/Inclinado.png")
+Principal = Mega_Man(20, 585, 110, 110,"Movimientos/Parado.png")
 Enemigo = Enemigo(1500, 565, 130, 130, "Imagenes/Enemigos/Enemigo.png")
 # Enemigo2 = Enemigo()
 Escalera = Escalera(2868,0,40, 650, "Fondo/Escaleras.png")
@@ -18,6 +18,8 @@ segundos = 0
 Colocacion()
 
 while True:
+
+    # Principal.Primera_Animacion()
 
     Acciones(reloj, Principal, FPS, frames_totales, Enemigo, Fondo, Escalera)
 
