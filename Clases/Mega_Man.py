@@ -7,10 +7,10 @@ class Mega_Man(Base):
     def __init__(self, x, y, ancho, alto, ruta):
         Base.__init__(self, x, y, ancho, alto, ruta)
         self.Movimientos = ("Movimientos/Entrando_1.png", "Movimientos/Entrando_2.png", "Movimientos/Entrando_3.png",
-                            "Movimientos/Parado.png", "Movimientos/Ojos_Cerrados.png","Movimientos/Inclinado.png",
-                            "Movimientos/P_Paso.png", "Movimientos/P_Derecho.png", "Movimientos/P_Paso.png",
-                            "Movimientos/P_Izquierdo.png","Movimientos/Salto.png",
-                            "Movimientos/Disparando.png","Movimientos/Disparo_Aire.png")
+                            "Movimientos/Inclinado.png", "Movimientos/P_Paso.png", "Movimientos/P_Derecho.png",
+                            "Movimientos/P_Paso.png", "Movimientos/P_Izquierdo.png", "Movimientos/Saltando.png",
+                            "Movimientos/Disparando.png", "Movimientos/Disparando_Aire.png")
+
         self.Tipo = "Principal"
         self.frame = 0
         self.Estado = 5
@@ -23,58 +23,59 @@ class Mega_Man(Base):
         Base.sprites.add(self)
         Base.Principales.add(self)
 
-    def Primera_Animacion(self):
-        if self.Entrada:
-            if self.rect.x < 585:
-                while self.Estado < 3:
-                    print(self.Estado)
-                    self.cambiar_sprite(self.Movimientos[self.Estado])
-                    self.rect.x += 25
-                    self.Estado += 1
-            if self.rect.x == 585:
-                self.Entrada = False
+    # def Primera_Animacion(self):
+    #     if self.Entrada:
+    #         if self.rect.x < 585:
+    #             while self.Estado < 3:
+    #                 print(self.Estado)
+    #                 self.cambiar_sprite(self.Movimientos[self.Estado])
+    #                 self.rect.x += 25
+    #                 self.Estado += 1
+    #         if self.rect.x == 585:
+    #             self.Entrada = False
 
     def Mov_Derecha(self, velocidad, frames_Totales):
+
         if not self.Direccion:
             self.Direccion = True
             self.invertir()
-            self.Estado = 0
+            self.Estado = 3
             return
 
         if not self.salto:
             if (frames_Totales - self.frame) > 2:
 
-                if self.Estado == 5 or self.Estado == 6 or self.Estado == 7 or self.Estado == 8:
+                if self.Estado == 3 or self.Estado == 4 or self.Estado == 5 or self.Estado == 6:
                     self.Estado += 1
                     self.frame = frames_Totales
                     self.cambiar_sprite(self.Movimientos[self.Estado])
 
-                elif self.Estado == 9:
-                    self.Estado = 6
+                elif self.Estado == 7:
+                    self.Estado = 4
                     self.frame = frames_Totales
                     self.cambiar_sprite(self.Movimientos[self.Estado])
 
         self.rect.x += velocidad
 
-    def mover_izquierda(self, velocidad, frames_Totales):
+    def Mov_Izquierda(self, velocidad, frames_Totales):
 
-        if self.Direccion is True:
+        if self.Direccion:
             self.Direccion = False
             self.invertir()
-            self.Estado = 0
+            self.Estado = 3
             return
 
-        if self.salto is False:
+        if not self.salto:
             if (frames_Totales - self.frame > 2):
 
-                if self.Estado == 5 or self.Estado == 6 or self.Estado == 7 or self.Estado == 8:
+                if self.Estado == 3 or self.Estado == 4 or self.Estado == 5 or self.Estado == 6:
                     self.Estado += 1
                     self.frame = frames_Totales
                     self.cambiar_sprite(self.Movimientos[self.Estado])
                     self.invertir()
 
-                elif self.Estado == 9:
-                    self.Estado = 1
+                elif self.Estado == 7:
+                    self.Estado = 4
                     self.frame = frames_Totales
                     self.cambiar_sprite(self.Movimientos[self.Estado])
                     self.invertir()
@@ -92,7 +93,7 @@ class Mega_Man(Base):
         self.original = self.rect.y
         self.maximo = self.rect.y - 150
         self.salto = True
-        self.cambiar_sprite(self.Movimientos[10])
+        self.cambiar_sprite(self.Movimientos[8])
         if self.Direccion is False:
             self.invertir()
 
@@ -117,22 +118,21 @@ class Mega_Man(Base):
 
     def Disparar(self):
         if self.Direccion:
-            self.cambiar_sprite(self.Movimientos[11])
+            self.cambiar_sprite(self.Movimientos[9])
             Controlador.Crear_Bala(self)
         else:
-            self.cambiar_sprite(self.Movimientos[11])
+            self.cambiar_sprite(self.Movimientos[9])
             self.invertir()
             Controlador.Crear_Bala(self)
 
     def Disparar_Saltando(self):
         if self.Direccion:
-            self.cambiar_sprite(self.Movimientos[12])
+            self.cambiar_sprite(self.Movimientos[10])
             Controlador.Crear_Bala(self)
         else:
-            self.cambiar_sprite(self.Movimientos[12])
+            self.cambiar_sprite(self.Movimientos[10])
             self.invertir()
             Controlador.Crear_Bala(self)
-
 
     def cambiar_sprite(self, movimiento):
         self.image = pygame.image.load(movimiento)
@@ -144,7 +144,7 @@ class Mega_Man(Base):
 
     def detenerse(self):
         if self.salto is False:
-            self.cambiar_sprite(self.Movimientos[0])
+            self.cambiar_sprite(self.Movimientos[3])
             if self.Direccion is False:
                 self.invertir()
 
@@ -167,6 +167,7 @@ class Mega_Man(Base):
     def colision_Bala(self):
         Bala = self.colision(Base.Balas)
         if Bala is not False and Bala.Tipo == "Bala_Mala":
+            print("Toque Bala")
             Base.sprites.remove(Bala)
             Base.Balas.remove(Bala)
             self.Vida -= 1
@@ -174,6 +175,7 @@ class Mega_Man(Base):
     def Colision_Enemigo(self):
         Enemigo = self.colision(Base.Enemigos)
         if Enemigo is not False:
+            print("Toque Enemigo")
             self.Vida -= 1
 
 

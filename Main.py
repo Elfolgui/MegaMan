@@ -1,8 +1,8 @@
 import sys
 from Clases import *
 
-Principal = Mega_Man(20, 585, 110, 110,"Movimientos/Parado.png")
-Enemigo = Enemigo(1500, 565, 130, 130, "Imagenes/Enemigos/Enemigo.png")
+Principal = Mega_Man(20, 578, 90, 90, "Movimientos/Inclinado.png")
+Enemigo = Enemigo(1500, 565, 100, 100, "Imagenes/Enemigos/Enemigo.png")
 # Enemigo2 = Enemigo()
 Escalera = Escalera(2868,0,40, 650, "Fondo/Escaleras.png")
 Fondo = Fondo()

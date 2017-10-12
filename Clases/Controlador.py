@@ -16,7 +16,7 @@ class Controlador(object):
 
     @classmethod
     def configurar_pantalla(cls, ancho, alto):
-        display = pygame.display.set_mode((ancho, alto), pygame.FULLSCREEN)
+        display = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
         pygame.display.set_caption("Super MegaMan")
         return display
 

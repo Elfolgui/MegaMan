@@ -14,7 +14,7 @@ def Acciones(reloj, MegaMan, FPS, frames_totales, Enemigo, fondo, Escalera):
         MegaMan.Mov_Derecha(15, frames_totales)
 
     elif teclas[pygame.K_a] or teclas[pygame.K_LEFT]:
-        MegaMan.mover_izquierda(15, frames_totales)
+        MegaMan.Mov_Izquierda(15, frames_totales)
 
     if teclas[pygame.K_w] or teclas[pygame.K_UP] and MegaMan.salto is False:
         MegaMan.activar_salto()
