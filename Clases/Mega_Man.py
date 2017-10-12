@@ -13,7 +13,7 @@ class Mega_Man(Base):
 
         self.Tipo = "Principal"
         self.frame = 0
-        self.Estado = 5
+        self.Estado = 3
         self.maximo = 0
         self.Entrada = True
         self.Direccion = True
@@ -100,6 +100,7 @@ class Mega_Man(Base):
     def saltar(self):
 
         if self.maximo == self.rect.y:
+            print("Llegue al maxima")
             self.Bajando = True
 
         if self.Bajando is False:
@@ -109,7 +110,7 @@ class Mega_Man(Base):
             else:
                 self.rect.y -= 20
 
-        if self.Bajando is True:
+        if self.Bajando:
             self.rect.y += 20
 
         if self.colision_piso():
@@ -118,10 +119,10 @@ class Mega_Man(Base):
 
     def Disparar(self):
         if self.Direccion:
-            self.cambiar_sprite(self.Movimientos[9])
+            self.cambiar_disparar(self.Movimientos[9])
             Controlador.Crear_Bala(self)
         else:
-            self.cambiar_sprite(self.Movimientos[9])
+            self.cambiar_disparar(self.Movimientos[9])
             self.invertir()
             Controlador.Crear_Bala(self)
 
@@ -137,6 +138,10 @@ class Mega_Man(Base):
     def cambiar_sprite(self, movimiento):
         self.image = pygame.image.load(movimiento)
         self.image = pygame.transform.scale(self.image, (self.ancho, self.alto))
+
+    def cambiar_disparar(self, movimiento):
+        self.image = pygame.image.load(movimiento)
+        self.image = pygame.transform.scale(self.image, (118, 90))
 
     def invertir(self):
         self.image = pygame.transform.flip(self.image, True, False)
@@ -178,6 +183,12 @@ class Mega_Man(Base):
             print("Toque Enemigo")
             self.Vida -= 1
 
+    def terminar_salto(self):
+        if self.Bajando:
+            self.Bajando = False
+            self.salto = False
+            self.detenerse()
+
 
 
 
@@ -194,12 +205,6 @@ class Mega_Man(Base):
             # # Chocó en la izquierda?
             # elif self.rect.x < bloque.rect.x:
             #     self.rect.x = bloque.rect.x - 95
-
-    def terminar_salto(self):
-        if self.Bajando:
-            self.Bajando = False
-            self.salto = False
-            self.detenerse()
 
     # def colisiones_con_salto(self):
     #

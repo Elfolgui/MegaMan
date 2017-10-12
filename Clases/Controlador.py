@@ -95,27 +95,6 @@ class Controlador(object):
     def Eliminar_Enemigo(cls, Enemigo):
         Base.sprites.remove(Enemigo)
 
-    @classmethod
-    def colisiones(cls, MegaMan):
-        # Mientras anda a pie
-        if MegaMan.salto is False:
-
-            # Hay colision con el piso?
-            if MegaMan.colision_piso() is False:
-
-                objeto = MegaMan.colision(Base.bloques)
-                if objeto is not False:
-                    MegaMan.colision_bloques_caida(objeto)
-
-                # Hay colision con algun bloque?
-                # if MegaMan.colision_bloques(objeto):
-                #     MegaMan.caerse()
-
-            else:
-                MegaMan.rect.y += 10
-                if MegaMan.Bajando:
-                    MegaMan.detenerse()
-                    MegaMan.Bajando = False
 
             # if MegaMan.colision_Bala() == "Me Pegaron" and Base.sprites.has(Bala):
             #     print("Perdi Vida")

@@ -2,27 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9071f792-587b-4270-b576-c3c39553070e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Movimientos/Disparando_Aire.png" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Imagenes/Agachado.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Imagenes/Disparo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Imagenes/Disparo_Aire.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Imagenes/Inclinado.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Imagenes/Pierna-Derecha.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Imagenes/Pierna-Izquierda.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Imagenes/Proximo-Paso.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Imagenes/Salto.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Movimientos/Disparo_Aire.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Movimientos/Disparando.png" afterPath="$PROJECT_DIR$/Movimientos/Disparando.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Movimientos/P_Izquierdo.png" afterPath="$PROJECT_DIR$/Movimientos/P_Izquierdo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/MegaMan_Expo.iml" afterPath="$PROJECT_DIR$/.idea/MegaMan_Expo.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Clases/Acciones.py" afterPath="$PROJECT_DIR$/Clases/Acciones.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Clases/Colocacion.py" afterPath="$PROJECT_DIR$/Clases/Colocacion.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Clases/Controlador.py" afterPath="$PROJECT_DIR$/Clases/Controlador.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Clases/Controlador_Personajes.py" afterPath="$PROJECT_DIR$/Clases/Controlador_Personajes.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Clases/Mega_Man.py" afterPath="$PROJECT_DIR$/Clases/Mega_Man.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main.py" afterPath="$PROJECT_DIR$/Main.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,11 +17,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="10" column="54" lean-forward="true" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
+            <state relative-caret-position="51">
+              <caret line="4" column="52" lean-forward="true" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -47,8 +30,8 @@
       <file leaf-file-name="Mega_Man.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Clases/Mega_Man.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+            <state relative-caret-position="63">
+              <caret line="169" column="19" lean-forward="true" selection-start-line="169" selection-start-column="19" selection-end-line="169" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -57,8 +40,8 @@
       <file leaf-file-name="Acciones.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Clases/Acciones.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="239">
+              <caret line="41" column="39" lean-forward="false" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -78,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Controlador_Personajes.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Controlador_Personajes.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Clases/Controlador_Personajes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="20" column="36" lean-forward="true" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+            <state relative-caret-position="369">
+              <caret line="26" column="39" lean-forward="true" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -93,8 +76,8 @@
       <file leaf-file-name="Controlador.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Clases/Controlador.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="165">
+              <caret line="96" column="0" lean-forward="false" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -157,10 +140,10 @@
         <option value="$PROJECT_DIR$/Clases/Enemigos.py" />
         <option value="$PROJECT_DIR$/Clases/Acciones.py" />
         <option value="$PROJECT_DIR$/Clases/Colocacion.py" />
-        <option value="$PROJECT_DIR$/Clases/Controlador_Personajes.py" />
-        <option value="$PROJECT_DIR$/Clases/Controlador.py" />
         <option value="$PROJECT_DIR$/Main.py" />
+        <option value="$PROJECT_DIR$/Clases/Controlador.py" />
         <option value="$PROJECT_DIR$/Clases/Mega_Man.py" />
+        <option value="$PROJECT_DIR$/Clases/Controlador_Personajes.py" />
       </list>
     </option>
   </component>
@@ -385,7 +368,14 @@
       <option name="project" value="LOCAL" />
       <updated>1506994446041</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Arreglando transicion">
+      <created>1507817918950</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1507817918950</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -421,7 +411,8 @@
     <MESSAGE value="Colision con escalera, funciona. Arreglar transiciones de sprites (fondo y enemigos). Ajustar colisiones" />
     <MESSAGE value="Agregue las escaleras" />
     <MESSAGE value="Ultimo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ultimo" />
+    <MESSAGE value="Arreglando transicion" />
+    <option name="LAST_COMMIT_MESSAGE" value="Arreglando transicion" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -767,6 +758,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="4" column="52" lean-forward="true" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Clases/Enemigos.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -777,30 +776,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Clases/Controlador_Personajes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="20" column="36" lean-forward="true" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Clases/Acciones.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Clases/Controlador.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="165">
+          <caret line="96" column="0" lean-forward="false" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
@@ -809,17 +788,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Clases/Mega_Man.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+        <state relative-caret-position="63">
+          <caret line="169" column="19" lean-forward="true" selection-start-line="169" selection-start-column="19" selection-end-line="169" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main.py">
+    <entry file="file://$PROJECT_DIR$/Clases/Acciones.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="10" column="54" lean-forward="true" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
-          <folding />
+        <state relative-caret-position="239">
+          <caret line="41" column="39" lean-forward="false" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Clases/Controlador_Personajes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="26" column="39" lean-forward="true" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
